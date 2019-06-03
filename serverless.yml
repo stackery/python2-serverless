@@ -14,7 +14,7 @@ provider:
       Resource: '*'
 functions:
   Function:
-    handler: handler.run
+    handler: handler.handler
     iamRoleStatements:
       - Effect: Allow
         Action:
