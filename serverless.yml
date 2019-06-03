@@ -15,3 +15,14 @@ provider:
 functions:
   Function:
     handler: handler.run
+    iamRoleStatements:
+      - Effect: Allow
+        Action:
+          - xray:PutTraceSegments
+          - xray:PutTelemetryRecords
+          - xray:GetSamplingRules
+          - xray:GetSamplingTargets
+          - xray:GetSamplingStatisticSummaries
+        Resource: '*'
+plugins:
+  - serverless-iam-roles-per-function
